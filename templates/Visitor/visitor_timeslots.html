@@ -1,0 +1,51 @@
+{% extends "/Visitor/visitor_base.html" %}
+
+{% block content %}
+     <form method = 'POST' >
+        <div class = "container d-flex justify-content-center align-items-center">
+            <div class = "m-3">
+                <label for="fest_name">Choose your Fest</label>
+                <select name="fest_name" id="fest_name">
+                    {% for fest in all_fests %}
+                        <option value="{{ fest.Name_fest }}">{{ fest.Name_fest }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+         <button type="submit" class = "btn btn-primary"> Search </button>
+        </div>
+     </form>
+
+    <div class = "container" style="margin-left:290px;">
+
+        <div class = "table-responsive" >
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        {% if columns %}
+                            {% for i in columns %}
+                                <th scope="col" class="table-boot1">{{ i }}</th>
+                            {% endfor %}
+                        {% endif %}
+                    </tr>
+                </thead>
+                <tbody>
+                {% for i in list_of_events %}
+                <tr>
+                    <td class="table-boot">
+                        {{i.Event_name}}
+                    </td>
+                    <td class="table-boot">
+                        {{i.Starttime}}
+                    </td>
+                    <td class="table-boot">
+                        {{i.Endtime}}
+                    </td>
+                </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

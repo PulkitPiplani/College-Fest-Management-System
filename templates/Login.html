@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/login.css')}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+    <body>
+        <div class="wrapper">
+          <div class="title">Login Form</div>
+            <form method="post" >
+                <div class="field">
+                    <input type="text" name="UserID" id="UserID" required>
+                    <label for="UserID">UserID</label>
+                </div>
+                <div class="field">
+                    <select name="profession">
+                        <option value="" disabled selected> Select your Profession</option>
+                        <option value="Visitor">Visitor</option>
+                         <option value="Participant">Participant</option>
+                    </select>
+                </div>
+                <div class="content">
+                <div class="field">
+                  <input type="submit" value="Login">
+                </div>
+                <div class="signup-link">
+                    Not a member? <a href="../templates/start.html">Signup now</a></div>
+            </form>
+        </div>
+    </div>
+
+    </body>
+</html>

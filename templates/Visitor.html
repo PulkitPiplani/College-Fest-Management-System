@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/base.css') }}">
+    {% block more_css %}
+    {% endblock %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/47dbc584b0.js" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js'></script>
+    <title>base</title>
+</head>
+<body>
+
+    <div class="wrapper">
+        <li><a id="head" class="nav-link" style="letter-spacing: 1.5px; font-weight: 900; font-size: 30px; padding: 10px;"
+               aria-current="page" href="/">Agrometrics</a></li>
+        <ul id="ul1">
+            <li class="nav-item" style="border-top: 1px solid #017700;"><a class="nav-link" href="/farmer_dashboard"><i class="fas fa-atom"></i> DashBoard</a></li>
+
+            <li class="nav-item"><a class="nav-link" href="/mandi_board"><i class="fas fa-balance-scale-left"></i> MandiBoard</a></li>
+            <li class="nav-item"><a class="nav-link" href="/farmer_crops"><i class="fas fa-seedling"></i> My Crops</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="/farmer_transactions"><i class="fas fa-history"></i> My Transactions</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="/farmer_storage"><i class="fas fa-store"></i> Storage Space</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="/farmer_my_policies"><i class="fas fa-poll-h"></i> My Policies</a>
+            </li>
+        </ul>
+    </div>
+    <div class="header" style="width: 100%; height: 50px">
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
+                                         style="float: right; color: #b0eacd;padding: 15px" data-bs-toggle="dropdown"
+                                         href="/" role="button" aria-expanded="false">About</a>
+            <ul class="dropdown-menu">
+                <li class="a"><a class="nav-link1" href="/base"><i class="fas fa-user"></i> General</a></li>
+                <li class="a"><a class="nav-link1" href="/base"><i class="fas fa-user-edit"></i> Edit Profile</a></li>
+                <li class="a"><a class="nav-link1" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </li>
+    </div>
+    {% block content %}
+    {% endblock %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+</body>
+</html>
